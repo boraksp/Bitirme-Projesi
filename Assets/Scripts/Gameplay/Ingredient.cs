@@ -84,7 +84,7 @@ public class Ingredient : MonoBehaviour
         if (coll.gameObject.CompareTag("Glass"))
         {
             Destroy(coll.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
