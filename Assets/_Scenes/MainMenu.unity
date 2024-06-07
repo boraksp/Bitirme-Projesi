@@ -216,12 +216,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1184845503726940457, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845503726940457, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184845503726940457, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.5
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 1184845503726940457, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177359424980784750, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
+      propertyPath: glassMovespeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3763340773508430556, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
       propertyPath: m_LocalScale.x
@@ -315,7 +327,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -397,20 +408,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a0d31347137cd42aa8299c2172e4fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabIngredient: {fileID: 9029176490945009930, guid: f54d81e6da47dda4297087a3e33cf788, type: 3}
-  radius: 1
 --- !u!1 &933504730
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f17cdd4c910e4946ac94585bca75351, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -575,6 +572,7 @@ GameObject:
   - component: {fileID: 994980144}
   - component: {fileID: 994980143}
   - component: {fileID: 994980147}
+  - component: {fileID: 994980148}
   m_Layer: 5
   m_Name: TargetCocktail
   m_TagString: Untagged
@@ -679,10 +677,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cocktailImage: {fileID: 981398794}
   cocktails:
-  - {fileID: 21300000, guid: f76e8da5cd39a5747b0e14c080e5496d, type: 3}
-  - {fileID: 21300000, guid: 4f17cdd4c910e4946ac94585bca75351, type: 3}
-  - {fileID: 21300000, guid: 6fba1a0604810f4449c44675570503f6, type: 3}
-  - {fileID: 21300000, guid: 67d4de169da33a943b70f6833c7323cd, type: 3}
+  - {fileID: 11400000, guid: d3e5585651d1d2841b1d0b5d542ae0af, type: 2}
+  - {fileID: 11400000, guid: ca07334f73fe13c4bab6837e764ed9b8, type: 2}
+  - {fileID: 11400000, guid: 13e90416d9b37924ebfd84c33b481308, type: 2}
+  - {fileID: 11400000, guid: 28ff2e84ad3261945944f90025e288a3, type: 2}
+--- !u!114 &994980148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994980142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4304b93abc12b284baab1d7de116c95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

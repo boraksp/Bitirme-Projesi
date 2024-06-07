@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class CocktailManager : MonoBehaviour
 {
-    public Image cocktailImage; 
-    public Sprite[] cocktails; 
+    public Image cocktailImage;
+    public Cocktail[] cocktails; 
+
     private int currentCocktailIndex;
 
     void Start()
@@ -15,11 +16,11 @@ public class CocktailManager : MonoBehaviour
     public void GenerateNewCocktail()
     {
         currentCocktailIndex = Random.Range(0, cocktails.Length);
-        cocktailImage.sprite = cocktails[currentCocktailIndex];
+        cocktailImage.sprite = cocktails[currentCocktailIndex].image;
     }
 
-    public int GetCurrentCocktailIndex()
+    public Cocktail GetCurrentCocktail()
     {
-        return currentCocktailIndex;
+        return cocktails[currentCocktailIndex];
     }
 }

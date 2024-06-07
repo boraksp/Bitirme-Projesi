@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// An ingredient
 /// </summary>
-public class Ingredient : MonoBehaviour
+public class Ingredients : MonoBehaviour
 {
     [SerializeField]
     Sprite ingredientSprite0;
