@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class CocktailManager : MonoBehaviour
 {
-    public Image cocktailImage; // Assign this in the Inspector
-    public Sprite[] cocktails; // Array of cocktail sprites
+    public Image cocktailImage; 
+    public Sprite[] cocktails; 
     private int currentCocktailIndex;
 
     void Start()
