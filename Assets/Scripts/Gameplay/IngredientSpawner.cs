@@ -1,64 +1,36 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using UnityEngine;
 
-///// <summary>
-///// An ingredient spawner
-///// </summary>
-//public class IngredientSpawner : MonoBehaviour
-//{
-//    [SerializeField]
-//    GameObject prefabIngredient;
-//    public float radius = 1.0f;
+public class IngredientSpawner : MonoBehaviour
+{
+    public GameObject[] ingredientPrefabs; // Array to hold ingredient prefabs
+    public float spawnInterval = 0.5f; // Interval in seconds between spawns
+    public float spawnRangeX = 8f; // Range on the X axis to spawn ingredients
+    public float spawnHeight = 10f; // Height above the scene to spawn ingredients
 
-//    /// <summary>
-//    /// Start is called before the first frame update
-//    /// </summary>
-//    void Start()
-//    {
-//        // save ingredient 
-//        GameObject ingredient = Instantiate<GameObject>(prefabIngredient);
-//        BoxCollider2D collider = ingredient.GetComponent<BoxCollider2D>();      
-//        Destroy(ingredient);
+    private void Start()
+    {
+        InvokeRepeating("SpawnIngredient", 0f, spawnInterval); // Start spawning ingredients
+    }
 
-//        // calculate screen width and height
-//        float screenWidth = ScreenUtils.ScreenRight - ScreenUtils.ScreenLeft;
-//        float screenHeight = ScreenUtils.ScreenTop - ScreenUtils.ScreenBottom;
+    void SpawnIngredient()
+    {
+        if (ingredientPrefabs.Length == 0)
+        {
+            Debug.LogWarning("No ingredient prefabs assigned to IngredientSpawner.");
+            return;
+        }
 
-//        // right side ingredient
-//        ingredient = Instantiate<GameObject>(prefabIngredient);
-//        Ingredient script = ingredient.GetComponent<Ingredient>();
-//        script.Initialize(Direction.Left,
-//            new Vector2(ScreenUtils.ScreenRight + radius,
-//                ScreenUtils.ScreenBottom + screenHeight / 2));
+        // Choose a random ingredient prefab
+        int index = Random.Range(0, ingredientPrefabs.Length);
 
-//        // top side asteroid
-//        ingredient = Instantiate<GameObject>(prefabIngredient);
-//        script = ingredient.GetComponent<Ingredient>();
-//        script.Initialize(Direction.Down,
-//            new Vector2(ScreenUtils.ScreenLeft + screenWidth / 2,
-//                ScreenUtils.ScreenTop + radius));
+        // Determine a random spawn position above the scene
+        Vector3 spawnPosition = new Vector3(
+            Random.Range(-spawnRangeX, spawnRangeX),
+            spawnHeight,
+            0f
+        );
 
-//        // left side asteroid
-//        ingredient = Instantiate<GameObject>(prefabIngredient);
-//        script = ingredient.GetComponent<Ingredient>();
-//        script.Initialize(Direction.Right,
-//            new Vector2(ScreenUtils.ScreenLeft - radius,
-//                ScreenUtils.ScreenBottom + screenHeight / 2));
-
-//        // bottom side asteroid
-//        ingredient = Instantiate<GameObject>(prefabIngredient);
-//        script = ingredient.GetComponent<Ingredient>();
-//        script.Initialize(Direction.Up,
-//            new Vector2(ScreenUtils.ScreenLeft + screenWidth / 2,
-//                ScreenUtils.ScreenBottom - radius));
-//    }
-
-//    /// <summary>
-//    /// Update is called once per frame
-//    /// </summary>
-//    void Update()
-//    {
-
-//    }
-//}
+        // Instantiate the ingredient at the spawn position
+        Instantiate(ingredientPrefabs[index], spawnPosition, Quaternion.identity);
+    }
+}
