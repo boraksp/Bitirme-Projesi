@@ -5,16 +5,22 @@ using UnityEngine.UI;
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPanel; // Reference to the GameOverPanel
+    private AudioManager audioManager;
 
     private void Start()
     {
         gameOverPanel.SetActive(false); // Ensure the panel is hidden at start
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void ShowGameOver()
     {
         gameOverPanel.SetActive(true); // Show the Game Over panel
+        if (audioManager != null)
+        {
+            audioManager.StopMusic(); // Stop the background music
+            audioManager.PlayGameOverSound(); // Play the game over sound effect
+        }
         Time.timeScale = 0f;
     }
 

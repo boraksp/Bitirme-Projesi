@@ -1,37 +1,59 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-/// <summary>
-/// The audio manager
-/// </summary>
-public static class AudioManager
+public class AudioManager : MonoBehaviour
 {
-    static AudioSource audioSource;
-    static Dictionary<AudioClipName, AudioClip> audioClips =
-        new Dictionary<AudioClipName, AudioClip>();
+    public AudioClip mainMenuMusic;
+    public AudioClip gameplayMusic;
+    public AudioClip gameOverSound;
+    private AudioSource audioSource;
 
-    /// <summary>
-    /// Initializes the audio manager
-    /// </summary>
-    /// <param name="source">audio source</param>
-    public static void Initialize(AudioSource source)
+    private void Awake()
     {
-        audioSource = source;
-        audioClips.Add(AudioClipName.Collect, 
-            Resources.Load<AudioClip>("hit"));
-        audioClips.Add(AudioClipName.PlayerDeath,
-            Resources.Load<AudioClip>("die"));
-        audioClips.Add(AudioClipName.Pour,
-            Resources.Load<AudioClip>("shoot"));
+        // Ensure the AudioManager persists across scenes
+        if (FindObjectsOfType<AudioManager>().Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+        // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+
+        // Subscribe to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    /// <summary>
-    /// Plays the audio clip with the given name
-    /// </summary>
-    /// <param name="name">name of the audio clip to play</param>
-    public static void Play(AudioClipName name)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        audioSource.PlayOneShot(audioClips[name]);
+        // Check the name of the scene to determine which music to play
+        if (scene.name == "MainMenu")
+        {
+            PlayMusic(mainMenuMusic);
+        }
+        else if (scene.name == "Gameplay")
+        {
+            PlayMusic(gameplayMusic);
+        }
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        if (audioSource.clip == clip && audioSource.isPlaying)
+        {
+            return;
+        }
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+    public void StopMusic()
+    {
+        audioSource.Stop();
+    }
+    public void PlayGameOverSound()
+    {
+        audioSource.PlayOneShot(gameOverSound);
     }
 }
