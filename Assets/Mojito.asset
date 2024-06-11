@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cocktailName: Mojito
   image: {fileID: 21300000, guid: 4f17cdd4c910e4946ac94585bca75351, type: 3}
-  ingredientIDs: 0500000006000000
+  ingredientIDs: 05000000060000000a000000090000000b000000

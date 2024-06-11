@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cocktailName: AperolSpritz
   image: {fileID: 21300000, guid: f76e8da5cd39a5747b0e14c080e5496d, type: 3}
-  ingredientIDs: 010000000400000006000000
+  ingredientIDs: 0100000004000000060000000c000000

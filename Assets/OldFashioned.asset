@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cocktailName: OldFashioned
   image: {fileID: 21300000, guid: 6fba1a0604810f4449c44675570503f6, type: 3}
-  ingredientIDs: 0000000008000000
+  ingredientIDs: 0000000008000000090000000c000000

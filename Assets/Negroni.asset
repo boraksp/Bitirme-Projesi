@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Negroni
   m_EditorClassIdentifier: 
   cocktailName: Negroni
-  image: {fileID: 21300000, guid: 67d4de169da33a943b70f6833c7323cd, type: 3}
+  image: {fileID: 21300000, guid: a936cf8362aac8f43a8b24b42ae5666e, type: 3}
   ingredientIDs: 020000000300000007000000
