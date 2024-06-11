@@ -44,7 +44,9 @@
 //}
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IngredientCollector : MonoBehaviour
 {
@@ -82,6 +84,7 @@ public class IngredientCollector : MonoBehaviour
                 {
                     // All required ingredients collected
                     cocktailManager.NextCocktail();
+
                     UpdateRequiredIngredients();
                 }
             }
@@ -92,6 +95,7 @@ public class IngredientCollector : MonoBehaviour
                 Destroy(other.gameObject); // Remove the ingredient
                 if (incorrectCollectionCount >= maxIncorrectCollections)
                 {
+                    //SceneManager.LoadScene("MainMenu");
                     EndGame();
                 }
             }
@@ -100,8 +104,9 @@ public class IngredientCollector : MonoBehaviour
     private void EndGame()
     {
         Debug.Log("Game Over!");
+
         GameOverManager gameOverManager = FindObjectOfType<GameOverManager>();
-        gameOverManager.ShowGameOver(); // Show the Game Over menu
+        gameOverManager.ShowGameOver(); // Show the Game Over menu 
     }
 }
 

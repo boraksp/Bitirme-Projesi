@@ -1080,7 +1080,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1236131832}
         m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: QuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

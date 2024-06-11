@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7992685060585091471}
   - component: {fileID: -8908071748112011720}
   - component: {fileID: -109339328813065168}
-  - component: {fileID: -4391362155830842198}
+  - component: {fileID: 5058259040181827482}
   m_Layer: 0
   m_Name: Aperol
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.398215, y: 1.6308146, z: 1.1414}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-4391362155830842198
-CircleCollider2D:
+--- !u!70 &5058259040181827482
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -160,5 +160,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.64
+  m_Size: {x: 0.35, y: 1.28}
+  m_Direction: 0

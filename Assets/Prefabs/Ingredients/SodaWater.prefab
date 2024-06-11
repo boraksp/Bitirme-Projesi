@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9032540240206388186}
   - component: {fileID: 8078341287817769860}
   - component: {fileID: 5503702296168116404}
-  - component: {fileID: 5085886790732077379}
+  - component: {fileID: 6226629126120159854}
   m_Layer: 0
   m_Name: SodaWater
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.95156246, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d29dea2e63b96864a9bb4577e9f1e9fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d544b7473d5b3241ba06d1c2a1b937b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5085886790732077379
-BoxCollider2D:
+--- !u!70 &6226629126120159854
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,16 +159,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.88, y: 4.5}
-    newSize: {x: 2.88, y: 4.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.88, y: 4.5}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.052637607, y: 0.013159394}
+  m_Size: {x: 0.6483485, y: 1.6315367}
+  m_Direction: 0

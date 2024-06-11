@@ -280,9 +280,10 @@ GameObject:
   m_Component:
   - component: {fileID: 95666857}
   - component: {fileID: 95666856}
+  - component: {fileID: 95666858}
   m_Layer: 0
   m_Name: GameOverManager
-  m_TagString: Untagged
+  m_TagString: gameovermanager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,6 +316,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95666858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95666855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4304b93abc12b284baab1d7de116c95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cocktailManager: {fileID: 1730900063}
+  maxIncorrectCollections: 2
 --- !u!1 &232764678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cocktailManager: {fileID: 1730900063}
-  maxIncorrectCollections: 1
+  maxIncorrectCollections: 2
 --- !u!1 &1309960457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1353,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1786348902}
+      - m_Target: {fileID: 95666856}
         m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -1629,7 +1644,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1786348902}
+      - m_Target: {fileID: 95666856}
         m_TargetAssemblyTypeName: GameOverManager, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
@@ -1874,7 +1889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cocktailManager: {fileID: 1730900063}
-  maxIncorrectCollections: 1
+  maxIncorrectCollections: 2
 --- !u!1 &1786348898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,10 +1901,10 @@ GameObject:
   - component: {fileID: 1786348899}
   - component: {fileID: 1786348901}
   - component: {fileID: 1786348900}
-  - component: {fileID: 1786348902}
+  - component: {fileID: 1786348903}
   m_Layer: 5
   m_Name: GameOverPanel
-  m_TagString: Untagged
+  m_TagString: gameovermanager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1929,7 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.92283356, g: 1, b: 0.3726415, a: 0.74509805}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1954,7 +1969,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786348898}
   m_CullTransparentMesh: 1
---- !u!114 &1786348902
+--- !u!114 &1786348903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1963,10 +1978,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786348898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb63a81177e1d0d4dbc3a65b04cc9213, type: 3}
+  m_Script: {fileID: 11500000, guid: 4304b93abc12b284baab1d7de116c95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 1786348898}
+  cocktailManager: {fileID: 1730900063}
+  maxIncorrectCollections: 2
 --- !u!1 &1999009831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5158033754948669326, guid: 8af340576d498e242ba6c7a2161e548b, type: 3}
