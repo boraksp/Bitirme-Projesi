@@ -31,6 +31,12 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+    }
+
     public void Exit()
     {
         // Exit the application
